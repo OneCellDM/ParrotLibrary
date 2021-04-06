@@ -1,0 +1,162 @@
+﻿<Window x:Class="ParrotLibraryArticleGenerator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ParrotLibraryArticleGenerator"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="672.8" Width="800">
+    <Grid >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <StackPanel Margin="10" VerticalAlignment="Top">
+            <StackPanel Orientation="Horizontal"/>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Title:  "/>
+                <TextBox x:Name="TitleTextbox" MinWidth="200" HorizontalAlignment="Stretch"></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Подсемейство:  "/>
+                <ComboBox x:Name="SubFamilyCombox">
+                    <TextBlock>Дятловые попугаи</TextBlock>
+                    <TextBlock>Лориевые</TextBlock>
+                    <TextBlock>Настоящие попугаи</TextBlock>
+                    <TextBlock>Несторы</TextBlock>
+                    <TextBlock>Совиные попугаи</TextBlock>
+                    <TextBlock>Щетинкоголовые</TextBlock>
+                </ComboBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Род:  "></TextBlock>
+                <ComboBox x:Name="GenderCombox">
+                    <TextBlock>Дятловые попугаи</TextBlock>
+                    <TextBlock>Белоспинные лори</TextBlock>
+                    <TextBlock>Блестящие лори</TextBlock>
+                    <TextBlock>Девичьи лори</TextBlock>
+                    <TextBlock>Клинохвостые лорикеты</TextBlock>
+                    <TextBlock>Красные лори</TextBlock>
+                    <TextBlock>Лори-гуа</TextBlock>
+                    <TextBlock>Лорикеты</TextBlock>
+                    <TextBlock>Лори-отшельники</TextBlock>
+                    <TextBlock>Мускусные лорикеты</TextBlock>
+                    <TextBlock>Новогвинейские горные лори</TextBlock>
+                    <TextBlock>Украшенные лори</TextBlock>
+                    <TextBlock>Широкохвостые лори</TextBlock>
+                    <TextBlock>Амазоны</TextBlock>
+                    <TextBlock>Андские высокогорные попугаи</TextBlock>
+                    <TextBlock>Ары</TextBlock>
+                    <TextBlock>Ара гиацинтовые</TextBlock>
+                    <TextBlock>Араровидные попугаи</TextBlock>
+                    <TextBlock>Аратинги</TextBlock>
+                    <TextBlock>Барнардовы попугаи</TextBlock>
+                    <TextBlock>Белобрюхие попугаи</TextBlock>
+                    <TextBlock>Благородные попугаи</TextBlock>
+                    <TextBlock>Блестящие попугаи</TextBlock>
+                    <TextBlock>Большеклювые попугаи</TextBlock>
+                    <TextBlock>Веерные попугаи</TextBlock>
+                    <TextBlock>Висячие попугайчики</TextBlock>
+                    <TextBlock>Волнистые попугайчики</TextBlock>
+                    <TextBlock>Воробьиные попугайчики</TextBlock>
+                    <TextBlock>Голубые ара</TextBlock>
+                    <TextBlock>Грифовые попугаи</TextBlock>
+                    <TextBlock>Длинноклювые попугаи</TextBlock>
+                    <TextBlock>Длиннокрылые попугаи</TextBlock>
+                    <TextBlock>Желтобрюхие попугаи</TextBlock>
+                    <TextBlock>Желтоухие попугаи</TextBlock>
+                    <TextBlock>Зелёные воробьиные попугайчики</TextBlock>
+                    <TextBlock>Земляные попугаи</TextBlock>
+                    <TextBlock>Какарики</TextBlock>
+                    <TextBlock>Капюшоновые попугаи</TextBlock>
+                    <TextBlock>Карликовые амазоны</TextBlock>
+                    <TextBlock>Карликовые ара</TextBlock>
+                    <TextBlock>Карликовые попугаи</TextBlock>
+                    <TextBlock>Каролинские попугаи</TextBlock>
+                    <TextBlock>Королевские попугаи</TextBlock>
+                    <TextBlock>Короткохвостые попугаи</TextBlock>
+                    <TextBlock>Краснобрюхие ара</TextBlock>
+                    <TextBlock>Красногузые попугаи</TextBlock>
+                    <TextBlock>Краснокрылые попугаи</TextBlock>
+                    <TextBlock>Красноплечие попугаи</TextBlock>
+                    <TextBlock>Кровавобрюхие краснохвостые попугаи</TextBlock>
+                    <TextBlock>Ласточковые попугаи</TextBlock>
+                    <TextBlock>Ленточные попугаи</TextBlock>
+                    <TextBlock>Маскаренские попугаи</TextBlock>
+                    <TextBlock>Нандайи</TextBlock>
+                    <TextBlock>Неразлучники</TextBlock>
+                    <TextBlock>Ночные попугаи</TextBlock>
+                    <TextBlock>Ожереловые попугаи</TextBlock>
+                    <TextBlock>Патагонские попугаи</TextBlock>
+                    <TextBlock>Певчие попугаи</TextBlock>
+                    <TextBlock>Пестрохвостые попугаи</TextBlock>
+                    <TextBlock>Пирруровые</TextBlock>
+                    <TextBlock>Попугаи-ваза</TextBlock>
+                    <TextBlock> Попугаи Жоффруа</TextBlock>
+                    <TextBlock>Попугаи-монахи</TextBlock>
+                    <TextBlock>Ракетохвостые попугаи</TextBlock>
+                    <TextBlock>Рогатые попугаи</TextBlock>
+                    <TextBlock> Родригесовы попугаи</TextBlock>
+                    <TextBlock>Розеллы</TextBlock>
+                    <TextBlock>Розовобрюхие травяные попугайчики</TextBlock>
+                    <TextBlock>Роскошные попугаи</TextBlock>
+                    <TextBlock>Синебрюхие попугаи</TextBlock>
+                    <TextBlock>Толстоклювые попугаи</TextBlock>
+                    <TextBlock>Тонкоклювые попугаи</TextBlock>
+                    <TextBlock>Травяные попугайчики</TextBlock>
+                    <TextBlock> Тупохвостые попугаи</TextBlock>
+                    <TextBlock>Украшенные попугаи</TextBlock>
+                    <TextBlock> Фиговые попугайчики</TextBlock>
+                    <TextBlock>Филиппинские толстоклювые попугаи</TextBlock>
+                    <TextBlock>Черноголовые попугаи</TextBlock>
+                    <TextBlock>Ширококлювые попугаи</TextBlock>
+                    <TextBlock>несторы</TextBlock>
+                    <TextBlock>Совиные попугаи</TextBlock>
+                    <TextBlock>Щетинкоголовые попугаи</TextBlock>
+
+                </ComboBox>
+
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Ссылка на картинку вида: "></TextBlock>
+                <TextBox x:Name="ImageUrlBox" MinWidth="200" HorizontalAlignment="Stretch"></TextBox>
+            </StackPanel>
+            <TextBlock Text="Код страницы:"></TextBlock>
+
+        </StackPanel>
+        <Grid Grid.Row="1" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.8*"></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition Height="80"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <TextBox x:Name="DataTextBox" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" HorizontalAlignment="Stretch" TextChanged="DataTextBox_TextChanged" AcceptsReturn="True" AcceptsTab="True"  ></TextBox>
+
+            <TextBox Grid.Row="2" x:Name="ImagesTextBox" AcceptsReturn="True" AcceptsTab="True"  TextChanged="ImagesTextBox_TextChanged">
+
+            </TextBox>
+
+            <FlowDocumentScrollViewer  Grid.Row="1" x:Name="DocView" Margin="0,0,-0.4,0">
+
+            </FlowDocumentScrollViewer>
+        </Grid>
+        <Button x:Name="GenerateButton" Grid.Row="2" Content="Сгенерировать" HorizontalAlignment="Center" Margin="25" Click="GenerateButton_Click">
+
+        </Button>
+        <ListView x:Name="ImagesView" Grid.Column="1" ScrollViewer.HorizontalScrollBarVisibility="Disabled" HorizontalAlignment="Left" Grid.RowSpan="2" VerticalAlignment="Top" Width="340">
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel  Orientation="Horizontal"></WrapPanel>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+        </ListView>
+
+
+    </Grid>
+</Window>

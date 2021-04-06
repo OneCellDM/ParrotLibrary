@@ -1,0 +1,49 @@
+﻿<FlowDocument xmlns='http://schemas.microsoft.com/winfx/2006/xaml/presentation'>
+
+    <Section Name = 'TitleInfo' TextAlignment = 'Center' FontSize = '16'>
+
+        <Paragraph  FontSize = '30' FontWeight = 'ExtraBold' Foreground = '#336048'>Дятловый попугайчик Бруина
+        </Paragraph>
+
+        <Paragraph TextAlignment = 'Center'>
+
+            <Image Width = '600'   ></Image>
+
+        </Paragraph>
+
+    </Section>
+    <Section>
+        <Paragraph>
+            <Expander Header='Информация о роде:' FontWeight = 'ExtraBold' Foreground = '#336048' FontSize = '25'>
+                <StackPanel Margin='10'>
+                    <TextBlock FontWeight = 'ExtraBold' FontSize = '20' Foreground = '#336048'>Navigation menu
+                    </TextBlock>
+
+                     <TextBlock TextWrapping="Wrap"  FontWeight = 'Normal' FontSize = '16' Foreground = 'Black' TextAlignment = 'Justify' Margin = '0,10,20,10'>Psittaculidae is a family containing Old World parrots. It consists of five subfamilies, Agapornithinae, Loriinae, Platycercinae, Psittacellinae and Psittaculinae.
+
+                    </TextBlock>
+                </StackPanel>
+            </Expander>
+        </Paragraph>
+    </Section>
+    <Section>
+        <Paragraph FontWeight = 'ExtraBold' FontSize = '25' Foreground = '#336048'>Внешний вид
+        </Paragraph>
+
+        <Paragraph TextAlignment = 'Justify' Margin = '20,0,20,10'>Длина тела 8-9&#160;см, вес&#160;- 12-16 г.
+
+        </Paragraph>
+        <Paragraph FontWeight = 'ExtraBold' FontSize = '25' Foreground = '#336048'>Распространение
+        </Paragraph>
+
+        <Paragraph TextAlignment = 'Justify' Margin = '20,0,20,10'>Обитают на острове Новая Гвинея, островах архипелага Бисмарка, Молуккских и Соломоновых островах.
+
+        </Paragraph>
+        <Paragraph FontWeight = 'ExtraBold' FontSize = '25' Foreground = '#336048'>Образ жизни
+        </Paragraph>
+
+        <Paragraph TextAlignment = 'Justify' Margin = '20,0,20,10'>Населяют субтропические и тропические сухие леса. Питаются преимущественно лишайниками.
+
+        </Paragraph>
+    </Section>
+</FlowDocument>
