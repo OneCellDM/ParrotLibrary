@@ -70,7 +70,7 @@
     </ApplicationDefinition>
     <Compile Include="DataModel\ParrotEnums.cs" />
     <Compile Include="ImageDataValueConverter.cs" />
-    <Compile Include="SingeldtonData.cs" />
+    <Compile Include="LoadingMarginConverter.cs" />
     <Compile Include="ToggleButtonSelectConverter.cs" />
     <Compile Include="View\AboutApp.xaml.cs">
       <DependentUpon>AboutApp.xaml</DependentUpon>
@@ -116,7 +116,6 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Person.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

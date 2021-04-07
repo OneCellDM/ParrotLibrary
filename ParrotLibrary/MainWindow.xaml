@@ -8,16 +8,15 @@
         xmlns:DataModel="clr-namespace:ParrotLibrary.DataModel" x:Class="ParrotLibrary.MainWindow"
       
         mc:Ignorable="d"
-        Title="MainWindow" Background="#365F4A" MinWidth="600" Height="415.6" Width="850.4"    >
+        Title="Parrot Library" Background="#365F4A" MinWidth="600" Height="415.6" Width="850.4"    >
         
     <Window.Resources>
-        <local:ImageDataValueConverter x:Key="IDConverter"></local:ImageDataValueConverter>
-        <local:ToggleButtonSelectConverter x:Key="ToogleConverter"></local:ToggleButtonSelectConverter>
+        <local:ImageDataValueConverter x:Key="IDConverter"></local:ImageDataValueConverter> 
+        <local:LoadingMarginConverter x:Key="loadingMarginConverter"></local:LoadingMarginConverter>
 
-        
+         <local:ToggleButtonSelectConverter x:Key="ToogleConverter"></local:ToggleButtonSelectConverter> 
 
-
-
+  
         <SolidColorBrush x:Key="ListBox.Static.Background" Color="#FFFFFFFF"/>
         <SolidColorBrush x:Key="ListBox.Static.Border" Color="#FFABADB3"/>
         <SolidColorBrush x:Key="ListBox.Disabled.Background" Color="#FFFFFFFF"/>
@@ -162,27 +161,31 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <StackPanel   Grid.Row="1"  Background="#FF365F4A" Margin="0,0"  >
-            <StackPanel  Margin="10,20,0,0" VerticalAlignment="Center"  HorizontalAlignment="Left">
+            <StackPanel  Margin="0,10,0,0" VerticalAlignment="Center"  HorizontalAlignment="Center">
 
-                <TextBlock FontFamily="{DynamicResource MenuFont}" Text="Parrot Library" Foreground="White" FontSize="20"  ></TextBlock>
-                <TextBlock Text="Все о жизни пернатых" Foreground="White"></TextBlock>
+                <TextBlock FontFamily="{DynamicResource MenuFont}" Padding="6" Text="Parrot Library" Foreground="White" FontSize="28"  ></TextBlock>
+                <TextBlock Text="Локальная энциклопедия" FontSize="18" Foreground="White"></TextBlock>
             </StackPanel>
-            <StackPanel Margin="10,20,10,0">
-                <ToggleButton x:Name="ParrotFromABC"   Content="Попугаи по алфавиту" Style="{DynamicResource ToggleButtonStyle1}" Checked="ParrotFromABC_Checked" Unchecked="ParrotFromABC_Unchecked"/>
+            <StackPanel Margin="10,10">
+                <Label Margin="0,0,0,5"  HorizontalContentAlignment="Center" FontSize="14" Foreground="White" FontFamily="{DynamicResource MenuFont}" Content="Поиск по попугаям"></Label>
+                <TextBox  FontFamily="{DynamicResource MenuFont}" Foreground="#FF365F4A" VerticalContentAlignment="Center" TextChanged="SearchTextbox_TextChanged" x:Name="SearchTextbox" Height="26" TextInput="SearchTextbox_TextInput"></TextBox>
+            </StackPanel>
+            <StackPanel Margin="10,5,0,10">
+                <ToggleButton x:Name="ParrotFromABC"  Margin="0,0,0,10"  Content="Попугаи по алфавиту" Style="{DynamicResource ToggleButtonStyle1}" Checked="ParrotFromABC_Checked" Unchecked="ParrotFromABC_Unchecked"/>
 
-                <ToggleButton x:Name="ParrotFromGenderButton"  Margin="0,0,0,20" Content="Попугаи по родам" Style="{DynamicResource ToggleButtonStyle1}" Checked="ParrotFromGenderButton_Checked" />
+                <ToggleButton x:Name="ParrotFromGenderButton"  Margin="0,0,0,10" Content="Попугаи по родам" Style="{DynamicResource ToggleButtonStyle1}" Checked="ParrotFromGenderButton_Checked" />
               
 
-                <ToggleButton   Content="О приложении" Style="{DynamicResource ToggleButtonStyle1}"/>
+                <ToggleButton x:Name="AboutAppButton"   Content="О приложении" Style="{DynamicResource ToggleButtonStyle1}" Checked="AboutAppButton_Checked"/>
             </StackPanel>
 
 
         </StackPanel>
-        <ListView   VirtualizingPanel.IsVirtualizingWhenGrouping="True"  VirtualizingPanel.CacheLengthUnit="Item" VirtualizingPanel.CacheLength="50"     x:Name="ParrotListView" Grid.Column="1" Background="White"  BorderThickness="0"    Grid.Row="1"     SelectionChanged="ParrotListView_SelectionChanged" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Style="{DynamicResource ListViewStyle1}" >>
+        <ListView   VirtualizingPanel.IsVirtualizingWhenGrouping="True"  VirtualizingPanel.CacheLengthUnit="Item" VirtualizingPanel.CacheLength="60"     x:Name="ParrotListView" Grid.Column="1" Background="White"  BorderThickness="0"    Grid.Row="1"     SelectionChanged="ParrotListView_SelectionChanged" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Style="{DynamicResource ListViewStyle1}" >>
 
             <ListView.ItemsPanel>
                 <ItemsPanelTemplate>
-                    <WrapPanel ItemWidth="250" VirtualizingPanel.CacheLengthUnit="Item" VirtualizingPanel.CacheLength="50"   VirtualizingPanel.IsVirtualizingWhenGrouping="True"   Orientation="Horizontal" ScrollViewer.HorizontalScrollBarVisibility="Disabled"  ></WrapPanel>
+                    <WrapPanel ItemWidth="250" VirtualizingPanel.CacheLengthUnit="Item" VirtualizingPanel.CacheLength="60"   VirtualizingPanel.IsVirtualizingWhenGrouping="True"   Orientation="Horizontal" ScrollViewer.HorizontalScrollBarVisibility="Disabled"  ></WrapPanel>
                 </ItemsPanelTemplate>
             </ListView.ItemsPanel>
             <ListView.ItemContainerStyle>
@@ -197,9 +200,6 @@
 
 
                             <Image   Width="200" Height="320" Source="{Binding Image,Converter={StaticResource IDConverter}}" >
-                                
-                                  
-
                             </Image>
                             <StackPanel  VerticalAlignment="Bottom"   Margin="10,0,10,0" >
                                 <StackPanel.Background>
@@ -232,7 +232,12 @@
         </ListView>
 
         <Frame x:Name="FrameData" Background="White" Visibility="Collapsed"  Grid.RowSpan="2" Grid.Column="1"></Frame>
-        <StackPanel Background="White" x:Name="LoadinPanel" Visibility="Collapsed"> </StackPanel>
+        <StackPanel Grid.RowSpan="2" Grid.ColumnSpan="2" Background="white" x:Name="LoadinPanel" Visibility="Visible">
+
+            <Label FontFamily="{StaticResource MenuFont}" Foreground="#365F4A" FontWeight="Bold" Margin="{Binding Height, ElementName=LoadinPanel,Converter={StaticResource loadingMarginConverter}}" HorizontalAlignment="Center"  Content="Загрузка"></Label>
+            <ProgressBar x:Name="LoadingProgressBar" Foreground="#365F4A"  Height="4" Width="Auto"   >  </ProgressBar>
+            
+        </StackPanel>
 
 
 

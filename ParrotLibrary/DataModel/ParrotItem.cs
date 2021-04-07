@@ -26,7 +26,7 @@ namespace ParrotLibrary.DataModel
             set{ 
             title= value;
                 FN = value[0];
-                FNNAME = value[0];
+                
             } 
         }
 
@@ -41,7 +41,7 @@ namespace ParrotLibrary.DataModel
         public string Path { get; set; }
 
         public char FN { get; set; }
-        public char FNNAME { get; set; }
+        public string DefaultGroup { get; set; } = "Поиск";
 
 
     }

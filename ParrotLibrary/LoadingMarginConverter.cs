@@ -4,20 +4,19 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows;
 using System.Windows.Data;
 
 namespace ParrotLibrary
 {
-   public class ToggleButtonSelectConverter : IValueConverter
+    public class LoadingMarginConverter : IValueConverter
     {
-        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)=>       
-            (bool)value ? Visibility.Visible: Visibility.Collapsed;
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture) =>
+            (double)value > 0 ? (double)value / 2 : 0;
         
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            return "";
+            return 0;
         }
     }
 }
