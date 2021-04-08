@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ParrotLibrary"
-        xmlns:s="clr-namespace:WpfToolkit.Controls;assembly=VirtualizingWrapPanel"
+      
         xmlns:DataModel="clr-namespace:ParrotLibrary.DataModel" x:Class="ParrotLibrary.MainWindow"
       
         mc:Ignorable="d"
@@ -197,9 +197,7 @@
                 <DataTemplate>
                     <StackPanel>
                         <Grid Grid.Column="0">
-
-
-                            <Image   Width="200" Height="320" Source="{Binding Image,Converter={StaticResource IDConverter}}" >
+                            <Image   Width="200" Height="320" Stretch="UniformToFill" Source="{Binding Image,Converter={StaticResource IDConverter}}" >
                             </Image>
                             <StackPanel  VerticalAlignment="Bottom"   Margin="10,0,10,0" >
                                 <StackPanel.Background>
@@ -228,15 +226,12 @@
                     </GroupStyle.HeaderTemplate>
                 </GroupStyle>
             </ListView.GroupStyle>
-
         </ListView>
 
         <Frame x:Name="FrameData" Background="White" Visibility="Collapsed"  Grid.RowSpan="2" Grid.Column="1"></Frame>
         <StackPanel Grid.RowSpan="2" Grid.ColumnSpan="2" Background="white" x:Name="LoadinPanel" Visibility="Visible">
-
             <Label FontFamily="{StaticResource MenuFont}" Foreground="#365F4A" FontWeight="Bold" Margin="{Binding Height, ElementName=LoadinPanel,Converter={StaticResource loadingMarginConverter}}" HorizontalAlignment="Center"  Content="Загрузка"></Label>
-            <ProgressBar x:Name="LoadingProgressBar" Foreground="#365F4A"  Height="4" Width="Auto"   >  </ProgressBar>
-            
+            <ProgressBar x:Name="LoadingProgressBar" Foreground="#365F4A"  Height="4" Width="Auto"   ></ProgressBar>
         </StackPanel>
 
 

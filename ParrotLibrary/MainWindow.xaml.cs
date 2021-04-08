@@ -24,9 +24,7 @@ namespace ParrotLibrary
         private ObservableCollection<DataModel.ParrotItem> parrotItems = new ObservableCollection<DataModel.ParrotItem>();
         private ObservableCollection<DataModel.ParrotItem> parrotItemsViewColletion = new ObservableCollection<DataModel.ParrotItem>();
         private Thread LoadDataToListThread;
-
         private View.ArticleView ArticleView;
-
         private CollectionView view;
         private PropertyGroupDescription groupDescription = new PropertyGroupDescription("FN");
         private PropertyGroupDescription groupDescription2 = new PropertyGroupDescription("Gender");
@@ -53,8 +51,7 @@ namespace ParrotLibrary
         }
 
         private void View_CurrentChanged(object sender, EventArgs e)
-        {
-        }
+        {}
         public async Task Load()
         {
             await Task.Run(() =>
@@ -64,7 +61,7 @@ namespace ParrotLibrary
                 this.Dispatcher.BeginInvoke(System.Windows.Threading.DispatcherPriority.ApplicationIdle, new Action(() =>
                 {
                     LoadingProgressBar.Maximum = files.Count();
-                 }));
+                }));
                 foreach (var file in files)
                 {
                     try
@@ -89,17 +86,12 @@ namespace ParrotLibrary
                             catch (Exception EX) { }
                         }
                         this.Dispatcher.BeginInvoke(System.Windows.Threading.DispatcherPriority.Normal, new Action(() =>
-                        {
-                            
-                            parrotItems.Add(p);
+                        {   parrotItems.Add(p);
                             LoadingProgressBar.Value++;
-
                         }));
                     }
                     catch (Exception ex)
-                    {
-                        Debug.WriteLine(ex.Message);
-                    }
+                    {}
                     Thread.Sleep(100);
                     
                 }
@@ -135,7 +127,6 @@ namespace ParrotLibrary
                               {
                                     parrotItemsViewColletion.Add(item);
                               }));
-
                           }
                           Thread.Sleep(120);
                       }

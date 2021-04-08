@@ -24,5 +24,9 @@ namespace ParrotLibrary.View
         {
             InitializeComponent();
         }
+
+        private void githubLink_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)=>
+            System.Diagnostics.Process.Start("https://github.com/OneCellDM/ParrotLibrary");
+        
     }
 }
